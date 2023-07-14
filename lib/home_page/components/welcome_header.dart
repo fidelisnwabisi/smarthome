@@ -17,8 +17,8 @@ class WelcomeHeader extends StatelessWidget {
             style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
           ),
           Text(
-            "Flutter TC",
-            style: GoogleFonts.bebasNeue(fontSize: 72),
+            "Fidelis Nwabisi",
+            style: GoogleFonts.bebasNeue(fontSize: 71.75),
           ),
         ],
       ),
