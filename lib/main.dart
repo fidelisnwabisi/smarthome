@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smarthome/home_page.dart';
+import 'package:smarthome/home_page/home_page.dart';
 
 void main() {
   runApp(const MyApp());

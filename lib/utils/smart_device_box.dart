@@ -9,6 +9,7 @@ class SmartDeviceBox extends StatelessWidget {
   late String iconPath;
   late bool powerOn;
   void Function(bool)? onChanged;
+
   SmartDeviceBox({
     super.key,
     required this.smartDeviceName,

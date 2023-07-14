@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smarthome/smart_device_box.dart';
+import 'package:smarthome/utils/smart_device_box.dart';
+
+import 'components/menu_header.dart';
+import 'components/smart_device_text.dart';
+import 'components/welcome_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,40 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    "assets/icons/menu.png",
-                    height: 40,
-                    color: Colors.grey[800],
-                  ),
-                  Icon(
-                    Icons.person,
-                    size: 45,
-                    color: Colors.grey[800],
-                  )
-                ],
-              ),
-            ),
+            const MenuHeader(),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              child: Column(
-                children: [
-                  Text(
-                    "Welcome Home",
-                    style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-                  ),
-                  Text(
-                    "Flutter TC",
-                    style: GoogleFonts.bebasNeue(fontSize: 72),
-                  ),
-                ],
-              ),
-            ),
+            const WelcomeHeader(),
             const SizedBox(height: 10),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
@@ -69,13 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              "Smart Devices",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: Colors.grey.shade800),
-            ),
+            const SmartDeviceText(),
             const SizedBox(height: 10),
             Expanded(
               child: GridView.builder(
