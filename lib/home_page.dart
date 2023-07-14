@@ -13,18 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 List mySmartDevice = [
   ["Smart Light", "assets/icons/menu.png", true],
-  ["Smart AC", "assets/icons/menu.png", false],
-  ["Smart TV", "assets/icons/menu.png", false],
-  ["Smart Fan", "assets/icons/menu.png", false],
+  ["Smart AC", "assets/icons/smart ac.png", false],
+  ["Smart TV", "assets/icons/smart tv.png", false],
+  ["Smart Fan", "assets/icons/smart fan.png", false],
 ];
-
-void powerSwitchChanged(bool value, int index) {
-  setState(() {
-    mySmartDevice[index][2] = value;
-  });
-}
-
-void setState(Null Function() param0) {}
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -99,7 +91,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     smartDeviceName: mySmartDevice[index][0],
                     iconPath: mySmartDevice[index][1],
                     powerOn: mySmartDevice[index][2],
-                    onChanged: (value) => powerSwitchChanged(value, index),
+                    onChanged: (value) {
+                      setState(() {
+                        mySmartDevice[index][2] = value;
+                      });
+                    },
                   );
                 },
               ),
